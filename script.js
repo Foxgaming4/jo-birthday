@@ -220,6 +220,18 @@ function playPuppySound() {
   try { pup.currentTime = 0; pup.play().catch(() => {}); } catch (e) {}
 }
 
+function playSongSound() {
+  const s = document.getElementById("songAudio");
+  if (!s) return;
+  try { s.currentTime = 0; s.play().catch(() => {}); } catch (e) {}
+}
+
+function stopSongSound() {
+  const s = document.getElementById("songAudio");
+  if (!s) return;
+  try { s.pause(); s.currentTime = 0; } catch (e) {}
+}
+
 // =======================================================
 //  CONTROLS
 // =======================================================
@@ -391,9 +403,11 @@ function openLightbox(idx) {
   currentLightboxIdx = idx;
   updateLightbox();
   document.getElementById("lightbox")?.classList.remove("hidden");
+  playSongSound();
 }
 function closeLightbox() {
   document.getElementById("lightbox")?.classList.add("hidden");
+  stopSongSound();
 }
 function navLightbox(dir) {
   currentLightboxIdx = (currentLightboxIdx + dir + CONFIG.photos.length) % CONFIG.photos.length;
@@ -786,6 +800,7 @@ function initCake() {
 
       candle.addEventListener('click', () => {
         if (candle.classList.contains('blown')) return;
+        if (blownCount === 0) playPuppySound();
         candle.classList.add('blown');
         playClickSound();
         blownCount++;
