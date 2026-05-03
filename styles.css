@@ -104,10 +104,11 @@ button { cursor: none; }
     repeating-conic-gradient(from 0deg at 50% 50%, transparent 0 11deg, rgba(10,10,20,.05) 11deg 11.4deg);
   background-size: 380px 380px;
   background-position: 0 0;
-  opacity: .55;
-  animation: webDrift 40s linear infinite;
+  opacity: .45;
+  animation: webDrift 60s linear infinite;
+  will-change: background-position;
 }
-.web-bg.subtle { opacity: .25; }
+.web-bg.subtle { opacity: .2; }
 
 @keyframes webDrift {
   from { background-position: 0 0; }
@@ -193,9 +194,10 @@ button { cursor: none; }
   width: clamp(180px, 22vw, 320px);
   z-index: 1;
   transform-origin: 50% -120px;
-  animation: swing 6s ease-in-out infinite alternate;
+  animation: swing 8s ease-in-out infinite alternate;
   pointer-events: none;
-  filter: drop-shadow(6px 8px 0 rgba(0,0,0,.4));
+  filter: drop-shadow(4px 6px 0 rgba(0,0,0,.3));
+  will-change: transform;
 }
 @keyframes swing {
   0%   { transform: rotate(-9deg); }

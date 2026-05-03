@@ -33,14 +33,14 @@ const CONFIG = {
 
   // Photo gallery — using actual files from assets/photos/
   photos: [
-    { src: "assets/photos/photo 1.jpg",         caption: "currently asking 'is water wet?' 💭" },
-    { src: "assets/photos/photo 2.jpg",         caption: "the queen of unhinged questions 👑" },
-    { src: "assets/photos/photo 3.jpg",         caption: "main character of a sitcom we're all extras in 🎬" },
-    { src: "assets/photos/photo 4.png",         caption: "joke incoming. brace yourself. 💥" },
-    { src: "assets/photos/photo 5.png",         caption: "she said something dumb. we all laughed. classic. 😂" },
-    { src: "assets/photos/Minecraft-pic1.png",  caption: "Minecraft arc: full-time architect, part-time chaos 🟫" },
-    { src: "assets/photos/Minecraft-pic2.png",  caption: "building a portal to nowhere specifically 🌀" },
-    { src: "assets/photos/Minecraft-pic3.png",  caption: "her biggest threat: gravity (allegedly) 🪦" },
+    { src: "assets/photos/photo 1.jpg",         caption: "Boow Bow puppyyy 🐾💖" },
+    { src: "assets/photos/photo 2.jpg",         caption: "bow bow bow 🐶✨" },
+    { src: "assets/photos/photo 3.jpg",         caption: "main character energy 🎬🔥" },
+    { src: "assets/photos/photo 4.png",         caption: "chaos mode: ON 💥" },
+    { src: "assets/photos/photo 5.png",         caption: "certified menace 😂🐾" },
+    { src: "assets/photos/Minecraft-pic1.png",  caption: "block queen 👑🟫" },
+    { src: "assets/photos/Minecraft-pic2.png",  caption: "building vibes 🌀✨" },
+    { src: "assets/photos/Minecraft-pic3.png",  caption: "gravity said no 🪦💀" },
   ],
 
   // Random encouraging popups
@@ -308,7 +308,7 @@ function initEasterEgg() {
 
 function rainSpiders() {
   const symbols = ["🕷️", "🕸️", "💖", "✨", "🐾", "🎂"];
-  for (let i = 0; i < 40; i++) {
+  for (let i = 0; i < 20; i++) {
     const s = document.createElement("div");
     s.textContent = symbols[Math.floor(Math.random() * symbols.length)];
     s.style.cssText = `
@@ -570,7 +570,7 @@ function initGlitchTitles() {
     t.classList.add("glitch-on");
     setTimeout(() => t.classList.remove("glitch-on"), 600 + Math.random() * 400);
   }
-  setInterval(glitchOne, 3500);
+  setInterval(glitchOne, 5000);
 }
 
 // =======================================================
@@ -629,7 +629,7 @@ function startConfetti() {
 
   const colors = ["#ff5fa2", "#4ad9ff", "#a86cff", "#fff36a", "#fdf9ff"];
   const pieces = [];
-  for (let i = 0; i < 220; i++) {
+  for (let i = 0; i < 100; i++) {
     pieces.push({
       x: Math.random() * canvas.width,
       y: Math.random() * -canvas.height,
@@ -680,7 +680,7 @@ function initCountdown() {
   // Spawn floating particles
   const particleBox = document.getElementById('cdParticles');
   if (particleBox) {
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 12; i++) {
       const p = document.createElement('div');
       p.className = 'cd-particle';
       p.style.left = Math.random() * 100 + '%';
@@ -708,6 +708,14 @@ function initCountdown() {
     unlocked = true;
     clearInterval(cdInterval);
     overlay.classList.add('unlocked');
+    // Start music on unlock (user interaction context)
+    const music = document.getElementById('bgMusic');
+    const muteBtn = document.getElementById('muteBtn');
+    if (music) {
+      music.muted = false;
+      music.play().catch(() => {});
+      if (muteBtn) muteBtn.classList.remove('muted');
+    }
     setTimeout(() => {
       overlay.style.display = 'none';
     }, 900);
