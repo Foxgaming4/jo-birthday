@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"e:\\\\Website\\\\Jo's Birthday\\\\\")"
+    ]
+  }
+}

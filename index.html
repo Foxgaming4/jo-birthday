@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="A Spider-Gwen themed 16th birthday surprise for Jo (aka Jooomuuu)" />
+<title>Happy 16th Birthday JOOOMUUU 🐾 — Spider-Verse Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Permanent+Marker&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body class="universe-gwen">
+
+<!-- ============== COUNTDOWN LOCK ============== -->
+<div class="countdown-overlay" id="countdownOverlay">
+  <div class="cd-web-bg" aria-hidden="true"></div>
+  <div class="cd-particles" id="cdParticles" aria-hidden="true"></div>
+  <div class="countdown-content">
+    <div class="cd-logo-wrap">
+      <div class="cd-logo-glow"></div>
+      <img src="assets/Elemets/spidergwen-logo.png" alt="Spider-Gwen" class="cd-logo" />
+    </div>
+    <h1 class="cd-title">THE <span class="hl-pink">JOOOMUUU</span>-VERSE</h1>
+    <p class="cd-subtitle">is loading in...</p>
+    <div class="countdown-timer" id="countdownTimer">
+      <div class="cd-unit"><span class="cd-num" id="cdDays">00</span><span class="cd-label">DAYS</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span class="cd-num" id="cdHours">00</span><span class="cd-label">HOURS</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span class="cd-num" id="cdMins">00</span><span class="cd-label">MINS</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-unit"><span class="cd-num" id="cdSecs">00</span><span class="cd-label">SECS</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor-web" id="cursorWeb" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+<!-- Background music: drop a birthday song at assets/audio/birthday-song.mp3 -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="assets/audio/ElevenLabs_Bayside_Breeze.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- Special audio: thendi by JO — fires on finale -->
+<audio id="specialAudio" preload="auto">
+  <source src="assets/audio/thendi by JO.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- Easter egg audio: Puppy by JO -->
+<audio id="puppyAudio" preload="auto">
+  <source src="assets/audio/Puppy by JO.mp3" type="audio/mpeg" />
+</audio>
+
+<!-- Floating control bar -->
+<div class="control-bar" role="toolbar" aria-label="Site controls">
+  <button id="muteBtn" class="ctrl-btn" aria-label="Toggle music" title="Toggle birthday song">
+    <span class="icon-on">♪</span><span class="icon-off">✕</span>
+  </button>
+  <button id="universeBtn" class="ctrl-btn" aria-label="Switch universe" title="Switch universe">
+    <span>↻</span>
+  </button>
+</div>
+
+<!-- ============== GLITCH TRANSITION OVERLAY ============== -->
+<div class="glitch-overlay" id="glitchOverlay" aria-hidden="true">
+  <div class="glitch-rays"></div>
+  <div class="glitch-bars"></div>
+  <div class="glitch-logo-wrap">
+    <img src="assets/Elemets/spidergwen-logo.png" alt="" class="glitch-logo glitch-logo-r" />
+    <img src="assets/Elemets/spidergwen-logo.png" alt="" class="glitch-logo glitch-logo-b" />
+    <img src="assets/Elemets/spidergwen-logo.png" alt="" class="glitch-logo glitch-logo-main" />
+  </div>
+  <div class="glitch-tag">EARTH-65 // JOOOMUUU // 16</div>
+</div>
+
+<!-- Comic SFX burst layer -->
+<div class="burst-layer" id="burstLayer" aria-hidden="true"></div>
+
+<!-- ============== HERO ============== -->
+<section id="hero" class="section hero active">
+  <div class="hero-wallpaper" aria-hidden="true"></div>
+  <div class="web-bg" aria-hidden="true"></div>
+  <div class="halftone" aria-hidden="true"></div>
+  <div class="floaters" aria-hidden="true"></div>
+
+  <img src="assets/Elemets/spidergwen.png" alt="" class="spidergwen-char" aria-hidden="true" />
+  <img src="assets/Elemets/spidergwen-logo.png" alt="" class="sg-logo hero-logo" aria-hidden="true" />
+
+  <div class="hero-inner">
+    <div class="comic-frame hero-frame floaty">
+      <div class="speech-bubble top-bubble">wake up Jooomuuu, you're 16 now 🐾</div>
+      <div class="age-badge">SWEET <span class="age-num">16</span></div>
+      <h1 class="title-stack">
+        <span class="title-line line-1 split">HAPPY</span>
+        <span class="title-line line-2 split">BIRTHDAY</span>
+        <span class="title-line line-3 split" data-text="JO!">JO!</span>
+      </h1>
+      <p class="subtitle">aka <span class="hl-pink">JOOOMUUU</span> 🐾✨ — <strong>16 years</strong> of stupid questions, immaculate vibes</p>
+      <button id="startBtn" class="btn btn-primary pulse">
+        <span>ENTER THE JOOOMUUU-VERSE</span>
+        <span class="btn-arrow">→</span>
+      </button>
+      <p class="micro-hint">🔊 click anything for a Fahh • a 🕷️ is hiding here somewhere</p>
+    </div>
+  </div>
+
+  <div id="easterSpider" class="easter-spider" title="...did something move?" aria-label="Hidden spider">🕷️</div>
+</section>
+
+<!-- ============== GALLERY ============== -->
+<section id="gallery" class="section gallery">
+  <div class="web-bg" aria-hidden="true"></div>
+  <img src="assets/Elemets/spidergwen-logo.png" alt="" class="sg-logo corner-logo tl" aria-hidden="true" />
+
+  <header class="section-header">
+    <h2 class="section-title slide-in" data-text="THE JOOOMUUU CINEMATIC UNIVERSE">THE JOOOMUUU CINEMATIC UNIVERSE</h2>
+    <p class="section-sub">8 panels. infinite chaos. one really stupid question per frame. 🎬</p>
+  </header>
+
+  <div class="comic-grid" id="comicGrid"></div>
+</section>
+
+<!-- ============== DOSSIER ============== -->
+<section id="dossier" class="section dossier">
+  <div class="web-bg subtle" aria-hidden="true"></div>
+  <img src="assets/Elemets/spidergwen.png" alt="" class="spidergwen-side" aria-hidden="true" />
+
+  <header class="section-header">
+    <h2 class="section-title slide-in" data-text="DOSSIER">DOSSIER</h2>
+    <p class="section-sub">classified file recovered from Earth-65 archives 📁</p>
+  </header>
+
+  <div class="dossier-card slam-in">
+    <div class="classification-strip">⚠ CLASSIFIED // EARTH-65 // EYES ONLY ⚠</div>
+    <div class="dossier-body">
+      <div class="profile-pic">
+        <div class="pic-frame">
+          <img src="assets/Elemets/spidergwen-logo.png" alt="Spider-Gwen logo" />
+        </div>
+        <div class="pic-label">SUBJECT</div>
+      </div>
+      <div class="stats">
+        <div class="stat-row"><span class="k">HERO NAME</span><span class="v">SPIDER-JO</span></div>
+        <div class="stat-row"><span class="k">ALIAS</span><span class="v">JOOOMUUU 🐾</span></div>
+        <div class="stat-row"><span class="k">AGE</span><span class="v"><strong class="hl-pink">16</strong> chronologically • 5 spiritually</span></div>
+        <div class="stat-row"><span class="k">UNIVERSE</span><span class="v">EARTH-AWESOME</span></div>
+        <div class="stat-row"><span class="k">POWERS</span><span class="v">STUPID QUESTIONS • UNHINGED COMEDY • MAKING ROOMS LOUDER</span></div>
+        <div class="stat-row"><span class="k">WEAKNESS</span><span class="v">PHYSICS, LOGIC, GRAVITY</span></div>
+        <div class="stat-row"><span class="k">SPIDER-SENSE</span><span class="v">REPLACED WITH COMEDIC TIMING</span></div>
+        <div class="stat-row"><span class="k">RECENT QUESTION</span><span class="v">"wait... is sand just tiny rocks?" 🤔</span></div>
+        <div class="stat-row"><span class="k">STATUS</span><span class="v blink-stat">🟢 BIRTHDAY MODE ACTIVE</span></div>
+        <div class="stat-row"><span class="k">THREAT LEVEL</span><span class="v">CATASTROPHICALLY FUNNY</span></div>
+      </div>
+    </div>
+    <div class="dossier-footer">
+      <span>📍 LAST SEEN: making someone laugh</span>
+      <span>🔒 CLEARANCE: TOP SECRET 💖</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MESSAGE ============== -->
+<section id="message" class="section message">
+  <div class="web-bg subtle" aria-hidden="true"></div>
+
+  <div class="comic-frame message-frame floaty">
+    <div class="speech-bubble left-bubble">incoming transmission... 📡</div>
+    <h2 class="section-title small slide-in" data-text="DEAR JOOOMUUU">DEAR JOOOMUUU</h2>
+    <p id="typedMessage" class="typed-message"></p>
+    <span class="typing-cursor" id="typingCursor">|</span>
+  </div>
+</section>
+
+<!-- ============== SURPRISE ============== -->
+<section id="surprise" class="section surprise">
+  <div class="web-bg" aria-hidden="true"></div>
+  <img src="assets/Elemets/spidergwen-logo.png" alt="" class="sg-logo corner-logo br spin-slow" aria-hidden="true" />
+
+  <header class="section-header">
+    <h2 class="section-title slide-in" data-text="DEPLOY A COMPLIMENT">DEPLOY A COMPLIMENT</h2>
+    <p class="section-sub">⚠ side effects: smiling, blushing, mild brain-cell loss</p>
+  </header>
+
+  <div class="surprise-stage">
+    <button id="surpriseBtn" class="btn btn-secondary big-btn wobble">
+      <span>RELEASE THE JOOOMUUU 🐾</span>
+    </button>
+    <div class="counter-chip" id="counterChip">compliments deployed: <strong id="counterNum">0</strong></div>
+    <div id="complimentBubble" class="speech-bubble big-bubble hidden">click the button, hero ✨</div>
+  </div>
+</section>
+
+<!-- ============== CAKE ============== -->
+<section id="cake" class="section cake-section">
+  <div class="web-bg subtle" aria-hidden="true"></div>
+
+  <header class="section-header">
+    <h2 class="section-title slide-in" data-text="MAKE A WISH">MAKE A WISH</h2>
+    <p class="section-sub"><strong>16 candles</strong> for 16 years of immaculate chaos 🎂 — click each one to blow it out</p>
+  </header>
+
+  <div class="cake-stage">
+    <div class="cake-wrap">
+      <div class="candles-row" id="candlesRow"></div>
+      <div class="cake-tier tier-top">
+        <div class="tier-drip"></div>
+      </div>
+      <div class="cake-tier tier-mid">
+        <div class="tier-drip"></div>
+        <span class="cherry" style="--cx:18%"></span>
+        <span class="cherry" style="--cx:50%"></span>
+        <span class="cherry" style="--cx:82%"></span>
+      </div>
+      <div class="cake-tier tier-bot">
+        <div class="tier-drip"></div>
+        <span class="cake-num">16</span>
+      </div>
+      <div class="cake-plate"></div>
+      <div class="cake-shadow"></div>
+    </div>
+
+    <p class="cake-status" id="cakeStatus">🔥 16 candles glowing — click each one</p>
+    <button id="cakeReset" class="btn btn-ghost cake-reset hidden">RELIGHT CANDLES 🔥</button>
+  </div>
+</section>
+
+<!-- ============== MINIGAME ============== -->
+<section id="game" class="section game-section">
+  <div class="web-bg subtle" aria-hidden="true"></div>
+
+  <header class="section-header">
+    <h2 class="section-title slide-in" data-text="WEB-SLINGER">WEB-SLINGER</h2>
+    <p class="section-sub">spiders are escaping! catch <strong>16</strong> for Jo's 16th 🐾🕷️</p>
+  </header>
+
+  <div class="game-wrap">
+    <div class="game-hud">
+      <div class="hud-pill">CAUGHT: <strong id="gameScore">0</strong>/16</div>
+      <div class="hud-pill">MISSES: <strong id="gameMisses">0</strong>/5</div>
+      <div class="hud-pill">TIME: <strong id="gameTime">0</strong>s</div>
+    </div>
+
+    <div id="gameArea" class="game-area">
+      <div class="game-overlay" id="gameOverlay">
+        <h3>READY, SPIDER-JO?</h3>
+        <p>click spiders before they escape Earth-65</p>
+        <button id="gameStartBtn" class="btn btn-primary">START</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINALE ============== -->
+<section id="finale" class="section finale">
+  <div class="finale-bg" aria-hidden="true"></div>
+  <div class="web-bg" aria-hidden="true"></div>
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+  <div class="comic-frame finale-frame floaty">
+    <h2 class="title-stack">
+      <span class="title-line line-1 split">THWIP!</span>
+      <span class="title-line line-2 split" data-text="HAPPY 16">HAPPY 16</span>
+      <span class="title-line line-3 split">JOOOMUUU 💖</span>
+    </h2>
+    <p class="subtitle">16 candles ↓ infinite chaos ↑ made with ❤️ + caffeine</p>
+    <p class="signed">— signed, your friendly neighborhood friend</p>
+    <button id="replayBtn" class="btn btn-ghost">REPLAY THE EXPERIENCE</button>
+  </div>
+</section>
+
+<!-- ============== LIGHTBOX ============== -->
+<div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+  <button class="lightbox-nav prev" id="lbPrev" aria-label="Previous">‹</button>
+  <div class="lightbox-content">
+    <img id="lightboxImg" src="" alt="" />
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+  </div>
+  <button class="lightbox-nav next" id="lbNext" aria-label="Next">›</button>
+</div>
+
+<!-- ============== POPUP TOAST ============== -->
+<div id="popupToast" class="popup-toast hidden" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
